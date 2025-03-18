@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Tarefas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Controle de Tarefas</h1>
+    <form action="/iniciar" method="post">
+        <input type="text" name="numero_sap" placeholder="Número SAP" required>
+        <select name="atividade" required>
+            <option value="">Selecione a Atividade</option>
+            <option value="Montagem">Montagem</option>
+            <option value="Inspeção">Inspeção</option>
+            <option value="Acabamento">Acabamento</option>
+        </select>
+        <button type="submit">Iniciar Tarefa</button>
+    </form>
+    <h2>Tarefas em Andamento</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Número SAP</th>
+                <th>Atividade</th>
+                <th>Início</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, row in tarefas.iterrows() %}
+                {% if pd.isnull(row['Fim']) %}
+                    <tr>
+                        <td>{{ row['Numero SAP'] }}</td>
+                        <td>{{ row['Atividade'] }}</td>
+                        <td>{{ row['Inicio'] }}</td>
+                        <td>
+                            <form action="/finalizar" method="post">
+                                <input type="hidden" name="numero_sap" value="{{ row['Numero SAP'] }}">
+                                <button type="submit">Finalizar</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    <button onclick="location.href='/'">Voltar à Página Inicial</button>
+</body>
+</html>
