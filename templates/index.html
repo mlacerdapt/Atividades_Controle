@@ -8,13 +8,19 @@
 <body>
     <h1>Controle de Tarefas</h1>
     <form action="/iniciar" method="post">
-        <input type="text" name="numero_sap" placeholder="Número SAP" required>
-        <select name="atividade" required>
-            <option value="">Selecione a Atividade</option>
-            <option value="Montagem">Montagem</option>
-            <option value="Inspeção">Inspeção</option>
-            <option value="Acabamento">Acabamento</option>
-        </select>
+        <div class="form-group">
+            <label for="numero_sap">Número SAP:</label>
+            <input type="text" name="numero_sap" id="numero_sap" placeholder="Número SAP" required>
+        </div>
+        <div class="form-group">
+            <label for="atividade">Selecione a Atividade:</label>
+            <select name="atividade" id="atividade" required>
+                <option value="">Selecione a Atividade</option>
+                <option value="Montagem">Montagem</option>
+                <option value="Inspeção">Inspeção</option>
+                <option value="Acabamento">Acabamento</option>
+            </select>
+        </div>
         <button type="submit">Iniciar Tarefa</button>
     </form>
     <h2>Tarefas em Andamento</h2>
