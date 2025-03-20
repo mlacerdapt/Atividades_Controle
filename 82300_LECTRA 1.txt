@@ -1,5 +1,0 @@
-Numero SAP: 82300
-Atividade: LECTRA 1
-Inicio: 19/03/2025 13:07:51
-Fim: None
-Fim: 19/03/2025 13:07:53

@@ -1,5 +1,0 @@
-Numero SAP: 2000
-Atividade: LECTRA 2
-Inicio: 19/03/2025 12:56:23
-Fim: None
-Fim: 19/03/2025 12:58:12
