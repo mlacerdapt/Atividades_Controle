@@ -1,0 +1,5 @@
+Numero SAP: 825000
+Atividade: LECTRA 2
+Inicio: 19/03/2025 13:13:13
+Fim: None
+Fim: 19/03/2025 13:14:17

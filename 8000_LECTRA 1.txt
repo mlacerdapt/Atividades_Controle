@@ -1,0 +1,5 @@
+Numero SAP: 8000
+Atividade: LECTRA 1
+Inicio: 19/03/2025 12:56:28
+Fim: None
+Fim: 19/03/2025 12:58:11

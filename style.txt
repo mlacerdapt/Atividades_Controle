@@ -30,7 +30,7 @@ button {
 form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 300px; /* Ajuste a largura conforme necessário */
     margin-bottom: 20px;
 }
 

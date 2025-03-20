@@ -7,15 +7,18 @@
 </head>
 <body>
     <h1>Controle de Tarefas</h1>
-    <div id="selecao-atividade">
-        <button onclick="selecionarAtividade('LECTRA 1')">LECTRA 1</button>
-        <button onclick="selecionarAtividade('LECTRA 2')">LECTRA 2</button>
-    </div>
-    <form id="form-tarefa" action="/iniciar" method="post" style="display: none;">
-        <input type="hidden" name="atividade" id="atividade-selecionada">
+    <form action="/iniciar" method="post">
         <div class="form-group">
             <label for="numero_sap">Número SAP:</label>
             <input type="text" name="numero_sap" id="numero_sap" placeholder="Número SAP" required>
+        </div>
+        <div class="form-group">
+            <label for="atividade">Selecione a Atividade:</label>
+            <select name="atividade" id="atividade" required>
+                <option value="">Selecione a Atividade</option>
+                <option value="LECTRA 1">LECTRA 1</option>
+                <option value="LECTRA 2">LECTRA 2</option>
+            </select>
         </div>
         <button type="submit">Iniciar Tarefa</button>
     </form>
@@ -39,7 +42,6 @@
                         <td>
                             <form action="/finalizar" method="post">
                                 <input type="hidden" name="numero_sap" value="{{ row['Numero SAP'] }}">
-                                <input type="hidden" name="atividade" value="{{ row['Atividade'] }}">
                                 <button type="submit">Finalizar</button>
                             </form>
                         </td>
@@ -49,12 +51,5 @@
         </tbody>
     </table>
     <button onclick="location.href='/'">Voltar à Página Inicial</button>
-    <script>
-        function selecionarAtividade(atividade) {
-            document.getElementById('atividade-selecionada').value = atividade;
-            document.getElementById('selecao-atividade').style.display = 'none';
-            document.getElementById('form-tarefa').style.display = 'block';
-        }
-    </script>
 </body>
 </html>
